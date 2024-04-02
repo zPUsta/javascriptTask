@@ -81,13 +81,15 @@
 
 
 // 3-cü tapşırıq
-// let word = prompt("sözü daxil edin")
+let word = prompt("sözü daxil edin")
 
-// for(let i=0; i<word.length * 2; i++){
-//   if(i<word.length){
-//      console.log(word.substring(0, i + 1));
-//   }
-//   else{
-//     console.log(word.substring(0,word.length * 2 - i - 1))
-//   }
-// }
+for(let i=0; i<word.length * 2; i++){
+  setTimeout(function(index) {
+        if (index < word.length) {
+            console.log(word.substring(0, index + 1));
+        } else {
+            console.log(word.substring(0, word.length * 2 - index - 1));
+        }
+    }, i * 1000, i);
+  
+}
